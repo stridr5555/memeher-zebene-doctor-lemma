@@ -53,38 +53,50 @@ const iconGallery = [
   {
     src: '/gallery/christ-meditation.png',
     title: 'Jesus Christ, Savior of the World',
-    source: 'Hara Monastery',
-    note: 'A contemplative portrait of Christ used as the visual center of prayer and repentance.',
+    source: 'Christ-centered icon',
+    note: 'A Christ-centered sacred image placed first for prayerful focus and visual reverence.',
   },
   {
-    src: '/gallery/christ-sinai.jpg',
-    title: 'Christ Pantocrator of Sinai',
-    source: 'Orthodox Monastery Icons',
-    note: 'The ancient Sinai image presents Christ blessing with one hand and holding the Gospel with the other.',
+    src: '/gallery/fb-zebene-1.jpg',
+    title: 'Ethiopian Orthodox Cross',
+    source: 'Ethiopian cross',
+    note: 'A visual sign of blessing, sacrifice, protection, and victory in Christ.',
   },
   {
-    src: '/gallery/christ-byzantine-sinai.jpg',
-    title: 'Pantocrator, St. Catherine tradition',
-    source: 'The Byzantine Legacy',
-    note: 'A solemn iconographic witness to Christ as ruler, teacher, judge, and merciful Savior.',
+    src: '/gallery/user-icon-01.jpg',
+    title: 'Holy Mother and Child',
+    source: 'Sacred icon',
+    note: 'An icon of the Theotokos with Christ, kept near the top for immediate prayerful focus.',
   },
   {
-    src: '/gallery/ethiopian-jesus.jpg',
-    title: 'Ethiopian icon of Our Lord',
-    source: 'EOTC icon page',
-    note: 'Ethiopian Orthodox visual language: bright color, frontal holiness, and sacred teaching through image.',
+    src: '/gallery/user-icon-02.jpg',
+    title: 'Orthodox sacred icon',
+    source: 'Sacred icon',
+    note: 'A richly colored devotional image added from the user-provided icon set.',
   },
   {
-    src: '/gallery/ethiopian-holy-trinity.jpg',
-    title: 'Holy Trinity icon',
-    source: 'EOTC icon page',
-    note: 'A traditional Ethiopian Orthodox sacred image for contemplation of divine communion and worship.',
+    src: '/gallery/user-icon-03.jpg',
+    title: 'Saint Michael the Archangel',
+    source: 'Sacred icon',
+    note: 'Saint Michael appears as defender and heavenly servant, strengthening the gallery’s angelic theme.',
   },
   {
-    src: '/gallery/ethiopian-last-supper.jpg',
-    title: 'The Mystical Supper',
-    source: 'EOTC icon page',
-    note: 'An image of Eucharistic memory: Christ gathers, feeds, teaches, and prepares His disciples.',
+    src: '/gallery/user-icon-04.jpg',
+    title: 'Ethiopian Orthodox icon',
+    source: 'Sacred icon',
+    note: 'A traditional sacred image added to keep the site’s visual language close to Ethiopian Orthodox devotion.',
+  },
+  {
+    src: '/gallery/user-icon-05.jpg',
+    title: 'Holy icon for contemplation',
+    source: 'Sacred icon',
+    note: 'A devotional image included for visual continuity with the Orthodox teaching sections.',
+  },
+  {
+    src: '/gallery/user-icon-06.webp',
+    title: 'Sacred Orthodox image',
+    source: 'Sacred icon',
+    note: 'A final user-provided icon completing the top gallery sequence.',
   },
 ];
 
@@ -107,6 +119,25 @@ export default function Home() {
         </div>
       </nav>
 
+      <section className="section icon-gallery-section top-icons" id="gallery">
+        <div className="section-label"><Sparkles size={18}/> Sacred icon gallery</div>
+        <h2>Icons and sacred images for prayerful contemplation.</h2>
+        <p className="section-intro">The page now opens with sacred images first: Christ, the Cross, the Theotokos, the angels, and Orthodox iconography that frames every teaching in worship and reverence.</p>
+        <div className="icon-gallery">
+          {iconGallery.map((item) => (
+            <article className="icon-gallery-card glass" key={item.src}>
+              <img src={item.src} alt={item.title} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.note}</p>
+                <span>{item.source}</span>
+                <a className="download-link" href={item.src} download>Download image</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="hero">
         <div className="manuscript-frame glass">
           <div className="ethiopian-cross hero-cross">✥</div>
@@ -123,11 +154,12 @@ export default function Home() {
         </div>
         <aside className="hero-icon-panel glass">
           <div className="portrait-frame">
-            <img src="/gallery/fb-zebene-2.jpg" alt="Memeher Zebene Lemma" />
+            <img src="/gallery/zebene-youtube-avatar.jpg" alt="Memeher Zebene Lemma" />
             <span className="portrait-cross">✥</span>
           </div>
           <h2>Memeher Zebene Lemma</h2>
           <p>A public teacher of Ethiopian Orthodox faith, calling hearts toward Scripture, repentance, worship, and the living memory of the saints.</p>
+          <a className="download-link portrait-download" href="/gallery/zebene-youtube-avatar.jpg" download>Download photo</a>
         </aside>
       </section>
 
@@ -198,24 +230,6 @@ export default function Home() {
         <div className="media-grid">
           <a className="media-card youtube glass" href="https://youtube.com/@memeherdrzebenelemma?si=Fu_RIFgTz6fgaxky" target="_blank"><PlaySquare size={50}/><h3>YouTube Sermons</h3><p>Long-form preaching, spiritual instruction, and video teaching for families and seekers.</p><span>Open channel →</span></a>
           <a className="media-card facebook glass" href="https://www.facebook.com/share/1Jf76yF136/" target="_blank"><Users size={50}/><h3>Facebook Community</h3><p>Announcements, shared reflections, livestream notices, and faithful conversation.</p><span>Visit page →</span></a>
-        </div>
-      </section>
-
-      <section className="section icon-gallery-section" id="gallery">
-        <div className="section-label"><Sparkles size={18}/> Sacred icon gallery</div>
-        <h2>Images of Christ and holy Orthodox iconography for contemplation.</h2>
-        <p className="section-intro">The gallery begins with the portrait of Jesus Christ, Savior of the world, then gathers similar Orthodox iconography from public Orthodox pages so the visual language of the site remains prayerful, traditional, and centered on the Lord.</p>
-        <div className="icon-gallery">
-          {iconGallery.map((item) => (
-            <article className="icon-gallery-card glass" key={item.src}>
-              <img src={item.src} alt={item.title} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.note}</p>
-                <span>{item.source}</span>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 
