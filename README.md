@@ -3,7 +3,8 @@
 A polished Next.js site for Ethiopian Orthodox teaching ministry.
 
 ## Features
-- Light theme with blue accents and Ethiopian Orthodox-inspired iconographic motifs
+- Deep Ethiopian Orthodox-inspired content sections with Scripture, saints, worship, fasting, family formation, and diaspora ministry
+- Blue frosted-glass visual system with animated Orthodox cross and arch motifs
 - YouTube and Facebook ministry sections
 - Respectful discussion/comments UI
 - Admin login with HTTP-only cookie
