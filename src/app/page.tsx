@@ -49,6 +49,45 @@ const calendar = [
   ['Daily life', 'Short exhortations for households: Scripture, patience, forgiveness, humility, and works of mercy.'],
 ];
 
+const iconGallery = [
+  {
+    src: '/gallery/christ-meditation.png',
+    title: 'Jesus Christ, Savior of the World',
+    source: 'Hara Monastery',
+    note: 'A contemplative portrait of Christ used as the visual center of prayer and repentance.',
+  },
+  {
+    src: '/gallery/christ-sinai.jpg',
+    title: 'Christ Pantocrator of Sinai',
+    source: 'Orthodox Monastery Icons',
+    note: 'The ancient Sinai image presents Christ blessing with one hand and holding the Gospel with the other.',
+  },
+  {
+    src: '/gallery/christ-byzantine-sinai.jpg',
+    title: 'Pantocrator, St. Catherine tradition',
+    source: 'The Byzantine Legacy',
+    note: 'A solemn iconographic witness to Christ as ruler, teacher, judge, and merciful Savior.',
+  },
+  {
+    src: '/gallery/ethiopian-jesus.jpg',
+    title: 'Ethiopian icon of Our Lord',
+    source: 'EOTC icon page',
+    note: 'Ethiopian Orthodox visual language: bright color, frontal holiness, and sacred teaching through image.',
+  },
+  {
+    src: '/gallery/ethiopian-holy-trinity.jpg',
+    title: 'Holy Trinity icon',
+    source: 'EOTC icon page',
+    note: 'A traditional Ethiopian Orthodox sacred image for contemplation of divine communion and worship.',
+  },
+  {
+    src: '/gallery/ethiopian-last-supper.jpg',
+    title: 'The Mystical Supper',
+    source: 'EOTC icon page',
+    note: 'An image of Eucharistic memory: Christ gathers, feeds, teaches, and prepares His disciples.',
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -63,6 +102,7 @@ export default function Home() {
           <a href="#teaching">Teaching</a>
           <a href="#life">Orthodox Life</a>
           <a href="#media">Media</a>
+          <a href="#gallery">Gallery</a>
           <a href="#discussion">Discussion</a>
         </div>
       </nav>
@@ -82,9 +122,12 @@ export default function Home() {
           </div>
         </div>
         <aside className="hero-icon-panel glass">
-          <div className="animated-arch"><span>✥</span></div>
-          <h2>In the Name of the Father, and of the Son, and of the Holy Spirit — One God. Amen.</h2>
-          <p>The Church does not merely preserve an old memory; she bears a living light. Her prayers form the tongue, her fasts heal desire, her hymns teach doctrine, and her saints show what grace can make of a human life.</p>
+          <div className="portrait-frame">
+            <img src="/gallery/fb-zebene-2.jpg" alt="Memeher Zebene Lemma" />
+            <span className="portrait-cross">✥</span>
+          </div>
+          <h2>Memeher Zebene Lemma</h2>
+          <p>A public teacher of Ethiopian Orthodox faith, calling hearts toward Scripture, repentance, worship, and the living memory of the saints.</p>
         </aside>
       </section>
 
@@ -155,6 +198,24 @@ export default function Home() {
         <div className="media-grid">
           <a className="media-card youtube glass" href="https://youtube.com/@memeherdrzebenelemma?si=Fu_RIFgTz6fgaxky" target="_blank"><PlaySquare size={50}/><h3>YouTube Sermons</h3><p>Long-form preaching, spiritual instruction, and video teaching for families and seekers.</p><span>Open channel →</span></a>
           <a className="media-card facebook glass" href="https://www.facebook.com/share/1Jf76yF136/" target="_blank"><Users size={50}/><h3>Facebook Community</h3><p>Announcements, shared reflections, livestream notices, and faithful conversation.</p><span>Visit page →</span></a>
+        </div>
+      </section>
+
+      <section className="section icon-gallery-section" id="gallery">
+        <div className="section-label"><Sparkles size={18}/> Sacred icon gallery</div>
+        <h2>Images of Christ and holy Orthodox iconography for contemplation.</h2>
+        <p className="section-intro">The gallery begins with the portrait of Jesus Christ, Savior of the world, then gathers similar Orthodox iconography from public Orthodox pages so the visual language of the site remains prayerful, traditional, and centered on the Lord.</p>
+        <div className="icon-gallery">
+          {iconGallery.map((item) => (
+            <article className="icon-gallery-card glass" key={item.src}>
+              <img src={item.src} alt={item.title} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.note}</p>
+                <span>{item.source}</span>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
